@@ -1,7 +1,9 @@
 ﻿int minValue = -100;
 int maxValue = 100;
-int m = EterNumberLines();
-int n = EterNumberColumns();
+string mess1 = "Введите количество строк массива : ";
+string mess2 = "Введите количество столбцов массива : ";
+int m = EterValueArray(mess1);
+int n = EterValueArray(mess2);
 double[,] randomArray = FillUserArray(m, n, minValue, maxValue);
 Console.WriteLine($"m = {m}, n = {n}");
 Console.WriteLine("******************************************");
@@ -9,42 +11,23 @@ PrintUserArray(randomArray);
 
 
 
-int EterNumberLines()
+int EterValueArray(string mess)
 {
     int m = 0;
     while (true)
     {
         try
         {
-            Console.WriteLine("Введите количество строк массива :");
+            Console.Write(mess);
             m = int.Parse(Console.ReadLine() ?? "");
             break;
         }
         catch (Exception error)
         {
-            System.Console.WriteLine($"Введено некоректное значение строк {error.Message}");
+            System.Console.WriteLine($"Введено некоректное значение массива {error.Message}");
         }
     }
     return m;
-}
-
-int EterNumberColumns()
-{
-    int n = 0;
-    while (true)
-    {
-        try
-        {
-            Console.WriteLine("Введите количество столбцов массива :");
-            n = int.Parse(Console.ReadLine() ?? "");
-            break;
-        }
-        catch (Exception error)
-        {
-            System.Console.WriteLine($"Введено некоректное значение строк {error.Message}");
-        }
-    }
-    return n;
 }
 
 double[,] FillUserArray(int m, int n, int minValue, int maxValue)
