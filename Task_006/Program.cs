@@ -3,13 +3,13 @@ PrintRandomArray(randomArray);
 Console.WriteLine();
 PrintResult(randomArray);
 
-
+//***********************************************//
 void PrintResult(int[,] array)
 {
     for (int i = 0; i < 11; i++)
     {
         int num = CountElement(i, array);
-        if(num == 2 || num == 3 || num == 4) Console.WriteLine($"{i} встречается {num} раза.");
+        if (num == 2 || num == 3 || num == 4) Console.WriteLine($"{i} встречается {num} раза.");
         else Console.WriteLine($"{i} встречается {num} раз.");
     }
 }
