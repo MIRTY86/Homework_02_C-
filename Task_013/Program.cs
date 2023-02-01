@@ -40,5 +40,3 @@ int SumNumbers(int firstNum, int secondNum)
     }
     return result;
 }
-
-
