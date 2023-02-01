@@ -34,7 +34,7 @@ int SumNumbers(int firstNum, int secondNum)
         Console.WriteLine("Нарушена логика программы, введите верный интервал.");
         return 0;
     }
-    if (firstNum < secondNum)
+    if (firstNum <= secondNum)
     {
         result = firstNum + SumNumbers(firstNum + 1, secondNum);
     }
